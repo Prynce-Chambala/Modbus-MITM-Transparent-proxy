@@ -1,0 +1,9 @@
+In a transparent Modbus/TCP MITM architecture using DNAT and an application-level proxy, identical Modbus requests may appear multiple times in packet captures.
+
+This is expected behavior and results from:
+
+            - NAT packet rewriting (same packet observed before and after DNAT)
+
+            - Application-level proxying, where Modbus requests and responses are terminated and re-emitted over new TCP connections
+
+              Each Modbus payload may therefore appear several times while belonging to distinct TCP flows.

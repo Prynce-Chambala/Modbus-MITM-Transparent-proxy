@@ -1,0 +1,10 @@
+🔷 Ethical Disclaimer
+
+This project is intended solely for educational, defensive, and research purposes.
+
+The author does not endorse nor support the misuse of this code in real industrial environments.
+
+Some implementation details have been intentionally removed to prevent operational misuse.
+
+
+

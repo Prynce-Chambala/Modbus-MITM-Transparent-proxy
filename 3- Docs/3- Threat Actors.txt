@@ -1,0 +1,6 @@
+🔷 Threat Actors:
+
+- Malicious insider
+- Compromised engineering workstation
+- Compromised network device
+- Misconfigured security appliance

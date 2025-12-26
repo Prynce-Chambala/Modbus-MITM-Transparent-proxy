@@ -1,0 +1,17 @@
+Lab Environment:
+This project is tested in a simulated environment (Node-RED, virtual PLC, virtual SCADA).
+Real industrial deployments may behave differently.
+
+Timing Constraints:
+The proxy does not model real-time constraints. In real OT networks, latency or jitter may impact
+process stability or trigger alarms.
+
+Protocol Coverage:
+Only Modbus TCP is covered. Serial Modbus (RTU/ASCII) and secured variants are out of scope.
+
+No Detection Mechanisms : 
+This lab does not simulate:
+- Industrial IDS : This will be implemented in future Lab to detect that threat.
+- DPI firewalls
+- Anomaly detection systems
+

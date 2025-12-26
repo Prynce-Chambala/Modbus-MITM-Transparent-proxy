@@ -1,0 +1,28 @@
+# Threat Model – Modbus TCP Transparent Proxy
+
+## Scope:
+This threat model applies to classic Modbus TCP deployments
+in flat OT networks without additional security controls.
+
+## No Authentication:
+Modbus TCP does not provide any mechanism to authenticate
+clients or servers. Any host able to reach TCP port 502
+can send read or write requests to a PLC.
+
+## No Encryption:
+Modbus TCP exchanges data in clear text.
+Requests and responses can be intercepted, observed,
+or proxied without detection.
+
+## Flat Network Assumption:
+Many OT environments rely on flat Layer 2 or Layer 3 networks,
+where traffic redirection (DNAT, ARP spoofing, routing changes)
+can be performed without alerting industrial devices.
+
+## No Message Integrity:
+Modbus TCP does not ensure message integrity or replay protection.
+Responses are trusted as long as they match the expected format.
+
+## Why This Matters:
+This lab demonstrates how protocol design assumptions
+can be abused without exploiting software vulnerabilities.

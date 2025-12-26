@@ -1,0 +1,53 @@
+🔷 Modbus TCP – Protocol :
+
+Modbus TCP is a Request/Response protocol operating over TCP/IP (port 502).
+
+Function Codes:
+  	
+FC 3: Read Holding Registers
+FC 6: Write Register
+FC 16: Write Multiple Registers
+
+In typical SCADA operation:
+
+SCADA periodically polls PLC registers/Coils...
+
+Reads are continuous: monitoring
+
+Writes are occasional: operator actions, automation logic
+
+Communication flow:
+
+SCADA  ── (Modbus TCP) ──>  PLC
+SCADA  <─ (Modbus TCP) ───  PLC
+
+
+In Modbus (RTU or TCP), every request expects a Response, including writes. So the sequence is always:
+
+Client (SCADA)  --->  WRITE request
+Server (PLC)    --->  WRITE response (ACK)
+
+What does the PLC send back after a WRITE?
+
+🔹 Multiple write/Single Write/Multi Coils/Single Coil :
+
+Function Code 16: Write Multiple Registers
+
+PLC response: Function code 16; Starting address; Number of registers written
+
+Example:
+
+-> Request :
+
+FC = 16
+Start = 40020
+Quantity = 4
+Values = [10, 20, 30, 40]
+
+-> Response :
+
+FC = 16
+Start = 40020
+Quantity = 4
+
+-> This response confirms the write.
